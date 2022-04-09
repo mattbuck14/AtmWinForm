@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Downloads\\SQL Projects\\AtmApp\\AtmApp\\AtmApp.csproj": {}
+    "C:\\Git\\AtmApp\\AtmApp\\AtmApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Downloads\\SQL Projects\\AtmApp\\AtmApp\\AtmApp.csproj": {
+    "C:\\Git\\AtmApp\\AtmApp\\AtmApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Downloads\\SQL Projects\\AtmApp\\AtmApp\\AtmApp.csproj",
+        "projectUniqueName": "C:\\Git\\AtmApp\\AtmApp\\AtmApp.csproj",
         "projectName": "AtmApp",
-        "projectPath": "C:\\Users\\User\\Downloads\\SQL Projects\\AtmApp\\AtmApp\\AtmApp.csproj",
+        "projectPath": "C:\\Git\\AtmApp\\AtmApp\\AtmApp.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Downloads\\SQL Projects\\AtmApp\\AtmApp\\obj\\",
+        "outputPath": "C:\\Git\\AtmApp\\AtmApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,16 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
