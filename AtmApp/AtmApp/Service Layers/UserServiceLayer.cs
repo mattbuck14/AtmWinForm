@@ -20,41 +20,31 @@ namespace AtmApp.Service_Layers
             connection = new SqlConnection(connectionString);
         }
 
-        private int getAge(DateTime bday)
+        public void AddUser(string firstName, string lastName, DateTime bday, int age)
         {
-            var today = DateTime.Today;
-            var age = today.Year - bday.Year;
+            SqlCommand cmd = new SqlCommand("AddUser", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@fn", firstName);
+            cmd.Parameters.AddWithValue("@ln", lastName);
+            cmd.Parameters.AddWithValue("@bday", bday);
+            cmd.Parameters.AddWithValue("@age", age);
 
-            if (bday.Date > today.AddYears(-age)) age--;
-            
-            return age;
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
         }
-
-        public void AddUser(string firstName, string lastName, DateTime bday, Form form)
+        public int GetCreatedUserId()
         {
-            try 
-            { 
-                int age = getAge(bday);
-                if (age < 18)
-                    throw new Exception("You have to be 18 or older to register.");
+            string query = "SELECT TOP 1 UserId FROM Atm.dbo.Users ORDER BY UserId DESC";
+            SqlCommand cmd = new SqlCommand(query, connection);
 
-                SqlCommand cmd = new SqlCommand("AddUser", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fn", firstName);
-                cmd.Parameters.AddWithValue("@ln", lastName);
-                cmd.Parameters.AddWithValue("@bday", bday);
-                cmd.Parameters.AddWithValue("@age", age);
-            
-                connection.Open();
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                form.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            connection.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            int id = reader.GetInt32(0);
+            reader.Close();
+            connection.Close();
+            return id;
         }
     }
 }

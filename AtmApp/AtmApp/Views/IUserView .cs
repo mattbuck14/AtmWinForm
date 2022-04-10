@@ -8,10 +8,8 @@ namespace AtmApp.Views
 {
     public interface IUserView
     {
-        int UserId { get; set; }
         string FirstName { get; set; }
         string LastName { get; set; }
         DateTime Birthday { get; set; }
-        int Age { get; set; }
     }
 }

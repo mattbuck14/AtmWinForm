@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace AtmApp.Forms
 {
-    public partial class RegisterForm : Form, IUserView
+    public partial class RegisterForm : Form, IUserView, ISecurityView
     {
         public RegisterForm()
         {
@@ -34,11 +34,16 @@ namespace AtmApp.Forms
             get { return bdayDatePicker.Value; }
             set { bdayDatePicker.Value = value; }
         }
-        public int UserId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Age { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public string Pin
+        {
+            get { return pinNumTextBox.Text; }
+            set { pinNumTextBox.Text = value; }
+        }
+
         private void sumbitBtn_Click(object sender, EventArgs e)
         {
-            UserPresenter presenter = new UserPresenter(this);
+            UserPresenter presenter = new UserPresenter(this, this);
             presenter.AddUser(this);
         }
     }
