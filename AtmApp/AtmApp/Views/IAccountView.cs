@@ -8,10 +8,9 @@ namespace AtmApp.Views
 {
     public interface IAccountView
     {
-        long AccountNumber { get; set; }
-        long RoutingNumber { get; set; }
-        double CashBalance { get; set; }
+        string AccountNumber { get; set; }
+        string RoutingNumber { get; set; }
+        string CashBalance { get; set; }
         DateTime OpenedDate { get; set; }
-        int UserId { get; set; }
     }
 }

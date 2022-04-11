@@ -8,8 +8,8 @@ namespace AtmApp.Models
 {
     public  class Account
     {
-        public long AccountNumber { get; set; }
-        public long RoutingNumber { get; set; }
+        public int AccountNumber { get; set; }
+        public int RoutingNumber { get; set; }
         public double CashBalance { get; set; }
         public DateTime OpenedDate { get; set; }
         public int UserId { get; set; }

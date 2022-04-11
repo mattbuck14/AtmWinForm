@@ -16,7 +16,7 @@ namespace AtmApp.Presenters
             view = _view;
         }
 
-        public void addSecurity(int userId)
+        public void AddSecurity(int userId)
         {
             SecurityServiceLayer layer = new SecurityServiceLayer();
             layer.AddSecurity(userId, view.Pin);

@@ -42,3 +42,4 @@ C:\Git\AtmApp\AtmApp\obj\Debug\net6.0-windows\refint\AtmApp.dll
 C:\Git\AtmApp\AtmApp\obj\Debug\net6.0-windows\AtmApp.pdb
 C:\Git\AtmApp\AtmApp\obj\Debug\net6.0-windows\AtmApp.genruntimeconfig.cache
 C:\Git\AtmApp\AtmApp\obj\Debug\net6.0-windows\ref\AtmApp.dll
+C:\Git\AtmApp\AtmApp\obj\Debug\net6.0-windows\AtmApp.Forms.MainScreen.resources

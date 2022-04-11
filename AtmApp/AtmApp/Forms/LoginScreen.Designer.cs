@@ -113,18 +113,19 @@
             this.enterButton.TabIndex = 5;
             this.enterButton.Text = "Enter";
             this.enterButton.UseVisualStyleBackColor = false;
+            this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
             // 
             // registerBtn
             // 
             this.registerBtn.BackColor = System.Drawing.Color.Transparent;
             this.registerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registerBtn.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
+            this.registerBtn.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.registerBtn.FlatAppearance.BorderSize = 0;
             this.registerBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.registerBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
             this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.registerBtn.Location = new System.Drawing.Point(233, 337);
+            this.registerBtn.Location = new System.Drawing.Point(238, 337);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(92, 29);
             this.registerBtn.TabIndex = 6;
@@ -134,6 +135,7 @@
             // 
             // LoginScreen
             // 
+            this.AcceptButton = this.enterButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;

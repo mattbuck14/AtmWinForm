@@ -88,10 +88,14 @@
             // 
             // bdayDatePicker
             // 
+            this.bdayDatePicker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bdayDatePicker.Location = new System.Drawing.Point(141, 127);
+            this.bdayDatePicker.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.bdayDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.bdayDatePicker.Name = "bdayDatePicker";
             this.bdayDatePicker.Size = new System.Drawing.Size(199, 23);
             this.bdayDatePicker.TabIndex = 9;
+            this.bdayDatePicker.Value = new System.DateTime(2004, 4, 10, 17, 11, 0, 0);
             // 
             // pinNumTextBox
             // 
@@ -160,6 +164,7 @@
             // 
             // RegisterForm
             // 
+            this.AcceptButton = this.sumbitBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;

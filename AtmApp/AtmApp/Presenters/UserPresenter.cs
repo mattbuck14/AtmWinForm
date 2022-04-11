@@ -16,7 +16,7 @@ namespace AtmApp.Presenters
         public UserPresenter(IUserView _view, ISecurityView view)
         {
             userView = _view;
-            securityView = view;    
+            securityView = view;  
         }
 
         private void SetException(string message)
@@ -28,7 +28,7 @@ namespace AtmApp.Presenters
         {
             var today = DateTime.Today;
             var age = today.Year - bday.Year;
-
+        
             if (bday.Date > today.AddYears(-age)) age--;
 
             return age;
@@ -58,20 +58,23 @@ namespace AtmApp.Presenters
         {
             UserServiceLayer layer = new UserServiceLayer();
             SecurityPresenter securityPresenter = new SecurityPresenter(securityView);
+            AccountPresenter accountPresenter = new AccountPresenter();
             int age = GetAge(userView.Birthday);
 
-           // try
-           // {
+            try
+            {
                 if (!IsValidInput(age))
                     throw exception;
                 layer.AddUser(userView.FirstName, userView.LastName, userView.Birthday, age);
                 int userId = layer.GetCreatedUserId();
-                securityPresenter.addSecurity(userId);
-          //  }
-            //catch (Exception ex)
-           // {
-            //    MessageBox.Show(ex.Message, "Inorrect Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                securityPresenter.AddSecurity(userId);
+                accountPresenter.AddAccount(userId);
+                form.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Inorrect Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
